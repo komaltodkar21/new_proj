@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .my_errors{
+        color:red;
+    }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Form</h1>
+    <form action="" method="POST" novalidate>
+    {% csrf_token %}
+        {% comment %} {{ form.as_p }} {% endcomment %}
+        {{form.non_field_error}}
+        {% for field in form %}
+        <div>
+            
+            {{field.label_tag}}{{field}}
+            <span class="my_errors">{{field.errors|striptags}}</span>
+            
+        </div>
+        {% endfor %}
+        <input type="submit" value='submit'>
+    </form>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is home page.</h1>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'get' %}">Go to get session!</a></li>
+            <li><a href="{% url 'set' %}">Go to set session!</a></li>
+            <li><a href="{% url 'del' %}">Go to delete session!</a></li>
+
+        </ul>
+    </nav>
+</body>
+</html>

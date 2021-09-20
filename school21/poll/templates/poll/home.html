@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        .clr{
+            color: red;
+        }
+        .mycss1{
+            color: purple; 
+        }
+        h1{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="head">Here is your first form to submit?</h1>
+    <form class="clr" action="" method="get" novalidate>
+        {% comment %} {{form}} {% endcomment %}
+        {% comment %} {{form.as_table}} {% endcomment %}
+        {{form.as_p}}
+
+        {% comment %} {{form.as_li}} {% endcomment %}
+        {% comment %} {{form.as_ul}} {% endcomment %}
+        {% comment %} {{form.name}} {% endcomment %}
+        {% comment %} {{form.email}} {% endcomment %}
+        {% comment %} {{form.contact}} {% endcomment %}
+        {% comment %} {{form.address}} {% endcomment %}
+        <input type="submit" value="Submit">
+        <input type="submit" value="Cancel">
+    </form>
+
+    <h1 id="head">Here is your second form to submit?</h1>
+    <form class="clr" action="" method="get" novalidate>
+
+        {{ form.name.label }}<br><hr>
+        {{form.contact.label}}<br><hr>
+        {{form.name.label_tag}}<br><hr>
+        {{form.contact.label_tag}}<br><hr>
+        {{form.name.id_for_label}}<br><hr>
+        {{form.email.id_for_label}}<br><hr>
+        {{form.name.value}}<br><hr>
+        {{form.email.value}}<br><hr>
+        {{form.address.value}}<br><hr>
+        {{form.name.initial}}<br><hr>
+        {{form.email.initial}}<br><hr>
+        {{form.address.initial}}<br><hr>
+        {{form.name.html_name}}<br><hr>
+        {{form.contact.html_name}}<br><hr>
+        {{form.address.html_name}}<br><hr>
+        {{form.name.help_text}}<br><hr>
+        {{form.contact.help_text}}<br><hr>
+        {{form.email.help_text}}<br><hr>
+        {{form.address.is_hidden}}<br><hr>
+        {% if form.name.is_hidden %}
+            <h1>This is hidden</h1>
+        {% endif %}
+        {{form.salary.is_hidden}}<br><hr>
+        {% if form.salary.name.is_hidden %}
+            <h1>This is hidden</h1>
+        {% endif %}
+        {{form.age.is_hidden}}<br><hr>
+        {% if form.age.name.is_hidden %}
+            <h1>This is hidden</h1>
+        {% endif %}
+        {{form.pin.errors}}<br><hr>
+
+        <input type="submit" value="Submit">
+        <input type="submit" value="Cancel">
+    </form>
+
+
+</body>
+</html>
